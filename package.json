@@ -1,0 +1,23 @@
+{
+  "name": "nemo",
+  "version": "0.0.1",
+  "description": "nemo bot",
+  "main": "index.js",
+  "scripts": {
+		"start": "slack_token_path=./slack_token node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VikramTiwari/nemo.git"
+  },
+  "author": "Vikram Tiwari <vikramtheone1@gmail.com> (http://vikramtiwari.com)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/VikramTiwari/nemo/issues"
+  },
+  "homepage": "https://github.com/VikramTiwari/nemo#readme",
+  "dependencies": {
+    "botkit": "^0.2.2"
+  }
+}
