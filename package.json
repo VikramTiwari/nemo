@@ -20,7 +20,10 @@
   "homepage": "https://github.com/VikramTiwari/nemo#readme",
   "dependencies": {
     "botkit": "^0.2.2",
-    "nconf": "^0.8.4"
+    "cheerio": "^0.20.0",
+    "moment": "^2.14.1",
+    "nconf": "^0.8.4",
+    "request": "^2.73.0"
   },
   "devDependencies": {
     "standard": "^7.1.2"
