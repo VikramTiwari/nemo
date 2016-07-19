@@ -1,27 +1,26 @@
-var Botkit = require('botkit');
-var fs = require('fs');
+let Botkit = require('botkit')
+let config = require('./config.js')
 
-var controller = Botkit.slackbot({debug: false});
+let controller = Botkit.slackbot({debug: false})
 
-if (!process.env.slack_token_path) {
-  console.log('Error: Specify slack_token_path in environment');
-  process.exit(1);
-}
+// give access to bot
+let bot = controller.spawn({
+  token: config.get('SLACK_TOKEN')
+})
 
-fs.readFile(process.env.slack_token_path, (err, data) => {
+// start bot
+bot.startRTM(function (err, bot, payload) {
   if (err) {
-    console.log('Error: Specify token in slack_token_path file');
-    process.exit(1);
+    throw new Error('Could not connect to Slack')
   }
-  data = String(data);
-  data = data.replace(/\s/g, "");
-  controller.spawn({token: data}).startRTM(function(err) {
-    if (err) {
-      throw new Error(err);
-    }
-  });
-});
 
+  // close the RTM for the sake of it in 5 seconds
+  setTimeout(function () {
+    bot.closeRTM()
+  }, 5000)
+})
+
+// sample commands
 controller.hears(
-    ['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'],
-    function(bot, message) { bot.reply(message, "Hello."); });
+  ['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'],
+  function (bot, message) { bot.reply(message, 'Hello.'); })

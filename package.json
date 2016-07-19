@@ -4,7 +4,8 @@
   "description": "nemo bot",
   "main": "index.js",
   "scripts": {
-		"start": "slack_token_path=./slack_token node index.js",
+    "develop": "sudo nodemon index.js",
+    "start": "sudo node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,10 @@
   },
   "homepage": "https://github.com/VikramTiwari/nemo#readme",
   "dependencies": {
-    "botkit": "^0.2.2"
+    "botkit": "^0.2.2",
+    "nconf": "^0.8.4"
+  },
+  "devDependencies": {
+    "standard": "^7.1.2"
   }
 }
