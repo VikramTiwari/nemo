@@ -1,4 +1,6 @@
 # nemo
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/VikramTiwari/nemo.svg)](https://greenkeeper.io/)
 one bot to rule them all
 
 
